@@ -1,6 +1,5 @@
-$backgroundColor : #4caf50;
     button:hover{
-        color: $backgroundColor;
+        color: #4caf50;
     }
     button{
         color: white;
@@ -53,7 +52,7 @@ $backgroundColor : #4caf50;
       }
       
       #enter {
-        margin-top: 20px;
+        margin-top: 40px;
         font-weight: bold;
         color: #333;
       }
