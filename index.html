@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+
+</style>
+	<div id = "screen4">
+		<link rel="stylesheet" href="index.css">
+		<h1><center>Find you Target BodyFat%</center></h1>
+		<p><center>Enter all of the fields to see how much weight you'll have to lose a day to get to your target bodyfat percentage</center></p>
+		
+		
+		<label for="input-bw">Body Weight in LBS:  </label>
+		<input type="number" id="input-bw"><br>
+		
+		
+		
+		<label for="input-currentBF">What is your current Body Fat Percentage (rough estimate):</label>
+		<input type="number" id="input-currentBF"><br>
+		
+		<label for="input-goalBF">What is your current Body Fat Percentage goal:</label>
+		<input type="number" id="input-goalBF"><br>
+
+		<label for="input-daysOut">In how many days do you want to achieve this in?:</label>
+		<input type="number" id="input-daysOut"><br>
+
+		<!<button onclick="showScreen1()"><!Back to Lifts Converter</button>
+		<button onclick="bodyFatCalculator()">Calcutate</button>
+		<p id="enter"></p>
+	</div>
+	<script>
+		function bodyFatCalculator(){
+			var bw = document.getElementById("input-bw").value;
+			var daysOut = document.getElementById("input-daysOut").value;
+			var goalBF = document.getElementById("input-goalBF").value;
+			var currentBF = document.getElementById("input-currentBF").value;
+			console.log("bw:", bw);
+  			console.log("daysOut:", daysOut);
+  			console.log("goalBF:", goalBF);
+ 			console.log("currentBF:", currentBF);
+			if(bw === " " || daysOut === " " ||goalBF  === " " ||currentBF  === " "){
+				document.getElementById("enter").innerHTML = "Please add a number for all the fields"	
+				console.log("if statement bfCalc")
+			}
+			else{
+			
+			console.log("bw: " + bw);
+			var OnePercentOfBodyWeight = bw / 100;
+			
+			console.log("daysOut: " + daysOut);
+			
+			console.log("goalBF: " + goalBF);
+			
+			console.log("currentBF: " + currentBF);
+			var newBF = currentBF - goalBF;
+			console.log("newBF: " + newBF);
+			var calculation = bw - (OnePercentOfBodyWeight * newBF).toFixed(2);
+			console.log("calculation: " + calculation);
+			var calculationText = 0
+			count++;
+			var ans = bw - calculation;
+			var newSum = ans/daysOut;
+			console.log(newSum);
+			var sum = ((bw - calculation) / daysOut).toFixed(2); // Set the number of decimal places to 2
+			console.log("sum: " + sum);
+			var calculationText = "";
+			document.getElementById("enter").innerHTML = "Your new weight goal is: " + calculation.toFixed(2) + " you need to lose " + sum + " lbs a day" + newSum;
+			}
+		}
+</script>
+</body>
+</html>
